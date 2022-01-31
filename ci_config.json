@@ -255,5 +255,10 @@
       "libwayland-bin",
       "libwayland-dev"
     ]
+  },
+  "zstd": {
+    "build_options": [
+      "zstd:bin_tests=true"
+    ]
   }
 }
