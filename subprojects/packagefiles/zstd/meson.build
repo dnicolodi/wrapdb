@@ -20,8 +20,8 @@ project('zstd',
     # so this isn't safe
     #'werror=true'
   ],
-  version: '1.4.5',
-  meson_version: '>=0.47.0')
+  version: '1.5.2',
+  meson_version: '>=0.48.0')
 
 cc = meson.get_compiler('c')
 cxx = meson.get_compiler('cpp')
@@ -39,10 +39,6 @@ cc_id = cc.get_id()
 compiler_gcc = 'gcc'
 compiler_clang = 'clang'
 compiler_msvc = 'msvc'
-
-if cc_id == compiler_msvc
-  error('MSVC 2019 compiler is not supported and not tested in Zstd')
-endif
 
 zstd_version = meson.project_version()
 zstd_libversion = zstd_version
