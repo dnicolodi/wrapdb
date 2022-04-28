@@ -1,8 +1,8 @@
 [wrap-file]
-directory = zstd-dev
-source_url = https://github.com/facebook/zstd/archive/refs/heads/dev.tar.gz
-source_filename = zstd-dev.tar.gz
-source_hash = 2a84fe2118446866574853ff30d268e42e7be8b91be1837c02164314067ff9cd
+directory = zstd-betterlinkage
+source_url = https://github.com/eli-schwartz/zstd/archive/refs/heads/betterlinkage.tar.gz
+source_filename = zstd-betterlinkage.tar.gz
+source_hash = 9e0a3d18fba6f4babf702ed67af7032109ab1a49176260cb1cc2a40d26ce8404
 patch_directory = zstd
 
 [provide]
