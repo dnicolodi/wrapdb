@@ -182,7 +182,8 @@
   "mpdecimal" : {
     "_comment": "Build examples as a minimal test",
     "build_options": [
-      "mpdecimal:examples=true"
+      "mpdecimal:examples=true",
+      "mpdecimal:tests=true"
     ]
   },
   "openssl": {
