@@ -295,12 +295,13 @@ elif machine == 'universal'
 
 endif
 
-
-build_mpdec_compiler_args = []
+libmpdec_c_args = []
+libmpdecpp_cpp_args = []
 if host_machine.system() == 'windows'
   add_project_arguments('/wd4200', '/wd4204', '/wd4221', '/D_CRT_SECURE_NO_WARNINGS', '/nologo', language: 'c')
   if get_option('default_library') != 'static'
-    build_mpdec_compiler_args = ['/DBUILD_LIBMPDEC']
+    libmpdec_c_args = ['/DBUILD_LIBMPDEC']
+    libmpdecpp_cpp_args = ['/DBUILD_LIBMPDECXX']
   endif
   vcver = machine == 'x64' ? '64vc' : '32vc'
   mpdecimal_h = configure_file(
@@ -344,7 +345,7 @@ endif
 libmpdec = library(
   'mpdec',
   libmpdec_sources,
-  c_args: build_mpdec_compiler_args,
+  c_args: libmpdec_c_args,
   dependencies: m_dep,
   version: library_version,
   soversion: library_soversion,
@@ -363,7 +364,7 @@ libmpdecpp_sources = files(
 libmpdecpp = library(
   'mpdec++',
   libmpdecpp_sources, mpdecimal_h,
-  cpp_args: build_mpdec_compiler_args,
+  cpp_args: libmpdecpp_cpp_args,
   dependencies: [m_dep, mpdec_dep],
   version: library_version,
   soversion: library_soversion,
