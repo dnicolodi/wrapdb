@@ -363,6 +363,7 @@ libmpdecpp_sources = files(
 libmpdecpp = library(
   'mpdec++',
   libmpdecpp_sources, mpdecimal_h,
+  c_args: build_mpdec_compiler_args,
   dependencies: [m_dep, mpdec_dep],
   version: library_version,
   soversion: library_soversion,
